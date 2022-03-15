@@ -56,6 +56,10 @@ function App() {
         teks="Saya memiliki hobi yang normal, yaitu tidur."
         />
       </div>
+
+      {/* tampilkan komponen balok */}
+      <Balok tittle="Lemari" />
+      <Balok tittle="Kotak Pensil" />
     </div>
   );
 }
