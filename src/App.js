@@ -2,6 +2,7 @@ import './App.css';
 import Test from './components/Test';
 import Employee from './components/Employee';
 import Accordion from './components/Accordion';
+// import Balok from './components/Balok'
 
 function App() {
   return (
@@ -36,10 +37,10 @@ function App() {
         image="https://smktelkom-mlg.sch.id/assets/upload/image/testi/img3.png"
         />
         <Employee
-        name="Ijlal Ganteng"
+        name="Ayang Ganteng"
         date="22-08-2004"
         gender="Male"
-        email="ijlal@gmail.com"
+        email="ayang@gmail.com"
         telepon="088888889"
         divisi="Programming"
         image="https://thumb.viva.co.id/media/frontend/thumbs3/2019/11/04/5dbfb7b91a197-jungkook-bts_1265_711.jpg"
@@ -56,10 +57,12 @@ function App() {
         teks="Saya memiliki hobi yang normal, yaitu tidur."
         />
       </div>
-
+      
+      <div>
       {/* tampilkan komponen balok */}
-      <Balok tittle="Lemari" />
-      <Balok tittle="Kotak Pensil" />
+      {/* <Balok tittle="Lemari" /> */}
+      {/* <Balok tittle="Kotak Pensil" /> */}
+      </div>
     </div>
   );
 }

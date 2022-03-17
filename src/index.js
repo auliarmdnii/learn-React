@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import Student from './components/Student';
 
-// load library bootstrap for styling
+import reportWebVitals from './reportWebVitals';
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap/dist/js/bootstrap.bundle"
 
 ReactDOM.render(
-  <App />,
+  <Student />,
   document.getElementById('root')
 );
 
