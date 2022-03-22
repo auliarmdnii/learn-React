@@ -145,7 +145,11 @@ export default function Student(props) {
                   <input type={`text`} className="form-control mb-2" value={name} onChange={(ev) => setName(ev.target.value)} />
                   Birthdate
                   <input type={`text`} className="form-control mb-2" value={birthdate} onChange={(ev) => setBirthdate(ev.target.value)} />
-                  <button className="btn btn-info" onClick={() => saveStudent()}>
+                </div>
+                <div className="modal-footer">
+                  <button type="button" className="btn btn-outline-light" data-bs-dismiss="modal">Close</button>
+                  <button type="button" className="btn btn-dark"
+                  onClick={() => saveStudent()}>
                     Save
                   </button>
                 </div>
