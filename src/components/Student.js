@@ -82,6 +82,21 @@ export default function Student(props) {
     setEditId(false);
   };
 
+  //function deleteStudent
+  let deleteStudent = (siswa) => {
+    // setId(item.id)
+    // setAction("delete")
+    if(window.confirm(`Yakin Menghapus ?`)){
+      let temp = [...Student]
+    
+      let index = temp.findIndex((siswa) => siswa.id === id)
+
+    temp.splice(index, 1)
+
+    setStudents(temp)
+    }
+  }
+
   return (
     <div>
       <div className="card-col-10">

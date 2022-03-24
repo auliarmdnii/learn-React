@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Student from './components/Student';
+import Book from './pages/Book';
+import Score from './pages/Score';
 
 import reportWebVitals from './reportWebVitals';
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap/dist/js/bootstrap.bundle"
 
 ReactDOM.render(
-  <Student />,
+  <Score />,
   document.getElementById('root')
 );
 
