@@ -1,70 +1,28 @@
-import './App.css';
-import Test from './components/Test';
-import Employee from './components/Employee';
-import Accordion from './components/Accordion';
-// import Balok from './components/Balok'
+// import semua pages yg akan kita tampilkan
+import Balok from "./pages/Balok"
+import Book from "./pages/Book"
+import Student from "./pages/Student"
+import Tahu from "./pages/Tahu";
+import Score from "./pages/Score";
 
-function App() {
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+
+export default function App(){
   return (
-    <div>
-      <div className="App">
-        <h3 align="center">This is my custom components</h3>
-        {/*
-        nama element: h3
-        attribute / properties: align 
-        */}
-
-        <Test name="Keitut" city="Nganjuk" fontColor="pink" avatar="https://e7.pngegg.com/pngimages/122/453/png-clipart-computer-icons-user-profile-avatar-female-profile-heroes-head.png">
-          Bocil tergemoi.
-          <button>Tombol kei</button>
-        </Test>
-        <Test name="Ibu" city="Blitar" fontColor="purple" avatar="https://e7.pngegg.com/pngimages/122/453/png-clipart-computer-icons-user-profile-avatar-female-profile-heroes-head.png">
-          Ibuku yang paling hebat.
-        </Test>
-        <Test name="Sherly" city="Bengkulu" fontColor="black" avatar="https://e7.pngegg.com/pngimages/122/453/png-clipart-computer-icons-user-profile-avatar-female-profile-heroes-head.png">
-          Wanita ter-alpha.
-        </Test>
-      </div>
-
-      <div>
-        <Employee
-        name="Aulia Putri Ramadhani"
-        date="19-10-2004"
-        gender="Female"
-        email="aulia@gmail.com"
-        telepon="088888888"
-        divisi="Programming"
-        image="https://smktelkom-mlg.sch.id/assets/upload/image/testi/img3.png"
-        />
-        <Employee
-        name="Ayang Ganteng"
-        date="22-08-2004"
-        gender="Male"
-        email="ayang@gmail.com"
-        telepon="088888889"
-        divisi="Programming"
-        image="https://thumb.viva.co.id/media/frontend/thumbs3/2019/11/04/5dbfb7b91a197-jungkook-bts_1265_711.jpg"
-        />
-      </div>
-
-      <div>
-        <Accordion
-        judul="Biodata"
-        teks="Nama saya adalah Aulia Putri Ramadhani, saya berasal dari Mars, saat ini saya bersekolah di Neptunus."
-        />
-        <Accordion
-        judul="Hobi"
-        teks="Saya memiliki hobi yang normal, yaitu tidur."
-        />
-      </div>
-      
-      <div>
-      {/* tampilkan komponen balok */}
-      {/* <Balok tittle="Lemari" /> */}
-      {/* <Balok tittle="Kotak Pensil" /> */}
-      </div>
-    </div>
-  );
+    <BrowserRouter basename="/my-react">
+    {/* BrowserRouter adalah element yg digunakan utk mengatur
+    tampilan pada halaman web berdasarkan path atau URL yg ditentukan
+    oleh user */}
+    <Navbar/>
+      <Routes>
+        {/* Routes -> grouping path-path atau URL yg didefinisikan */}
+        <Route path="/balok" element={<Balok/>} />
+        <Route path="/book" element={<Book/>} />
+        <Route path="/student" element={<Student/>} />
+        <Route path="/tahu" element={<Tahu/>} />
+        <Route path="/score" element={<Score/>} />
+      </Routes>
+    </BrowserRouter>
+  )
 }
-
-export default App;

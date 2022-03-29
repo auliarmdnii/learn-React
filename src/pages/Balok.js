@@ -6,7 +6,7 @@
  * komponen stateless.
  */
 import {useState} from "react";
-function Balok(props){
+export default function Balok(props){
     // prepare panjang, lebar, tinggi, volume
     // mutator method -> fungsi utk mengubah data pada variable private
     let [panjang, setPanjang] = useState(0)

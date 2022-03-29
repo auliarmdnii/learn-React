@@ -1,33 +1,18 @@
 import { useState, useEffect } from 'react';
 import ScoreList from '../components/ScoreList';
 
-// export default function Average(props) {
-//     let [averages, setAverages] = useState();
-
-//    useEffect(() => {
-//     // initialize state average
-//     let count = (math + english + chemistry) / 3;
-//     let averages = count / 5;   
-//    })
-// }
-
 export default function Score(props) {
-    let [scores, setScores] = useState([]);
+  let [score, setScore] = useState([]);
 
   useEffect(() => {
-    // initialize state average
-    let count = (math + english + chemistry) / 3;
-    let averages = count / 5;
-
     // initialize state scores
-    let arrScores = [
+    let arrScore = [
       {
         id: 1,
         name: `Aira Johnson`,
         math: 80,
         english: 90,
         chemistry: 70,
-        average: count,
       },
       {
         id: 2,
@@ -35,7 +20,6 @@ export default function Score(props) {
         math: 40,
         english: 80,
         chemistry: 79,
-        average: count,
       },
       {
         id: 3,
@@ -43,7 +27,6 @@ export default function Score(props) {
         math: 50,
         english: 87,
         chemistry: 60,
-        average: count,
       },
       {
         id: 4,
@@ -51,7 +34,6 @@ export default function Score(props) {
         math: 70,
         english: 78,
         chemistry: 80,
-        average: count,
       },
       {
         id: 5,
@@ -59,26 +41,56 @@ export default function Score(props) {
         math: 50,
         english: 80,
         chemistry: 56,
-        average: count,
       },
     ];
 
-    setScores(arrScores);
+    setScore(arrScore);
   }, []);
+
+  let count = (math, english, chemistry) => {
+    let result = (math + english + chemistry) / 3;
+    return result;
+  };
+
+  let pass = (average) => {
+    if (average >= 75) {
+      return (
+        <h4>
+          <span className="badge rounded-pill bg-success">LULUS</span>
+        </h4>
+      );
+    } else if (average <= 74) {
+      return (
+        <h4>
+          <span className="badge rounded-pill bg-danger">TIDAK LULUS</span>
+        </h4>
+      );
+    }
+  };
 
   return (
     <div className="container-fluid">
-      {books.map(item => (
-        <ScoreList 
-            key={`key-${item.id}`} 
-            id={item.id} 
-            name={item.name} 
-            math={item.math} 
-            english={item.english} 
-            chemistry={item.chemistry} 
-            average={item.average}>
-        </ScoreList>
-      ))}
+      {/* <div className="average">
+                <div className="card-body text-center">
+                    <h5 className="card-title">Average</h5>
+                    <h2 className="card-text">75</h2>
+                    <a href="#student-card" className="btn btn-primary">Student</a>
+                </div>
+            </div> */}
+      <div className="row">
+        {score.map((item) => (
+          <ScoreList
+            key={`key-${item.id}`}
+            id={item.id}
+            name={item.name}
+            math={item.math}
+            english={item.english}
+            chemistry={item.chemistry}
+            averages={count(item.math, item.english, item.chemistry)}
+            pass={pass(count(item.math, item.english, item.chemistry))}
+          ></ScoreList>
+        ))}
+      </div>
     </div>
   );
 }
